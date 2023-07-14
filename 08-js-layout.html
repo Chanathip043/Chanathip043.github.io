@@ -170,26 +170,21 @@
 
 
         function delete_data(i) {
-            //console.log(i)
-            // delete array_fname[i]
-            //console.log(array_fname)
+      if (confirm('Delete Data Y/n')) {
+        array_fname.splice(i, 1)
+        array_Phone.splice(i, 1)
+        array_email.splice(i, 1)
 
+        localStorage.setItem('fname', JSON.stringify(array_fname))
+        localStorage.setItem('Phone', JSON.stringify(array_Phone))
+        localStorage.setItem('email', JSON.stringify(array_email))
 
-            if (console('Delete data y/n')) {
-            array_fname.splice(i,1)
-            array_Phone.splice(i,1)
-            array_email.splice(i,1)
+        tb1.innerHTML = ''
 
-            localStorage.setItem('fname',JSON.stringify(array_fname))
-            localStorage.setItem('Phone',JSON.stringify(array_Phone))
-            localStorage.setItem('email',JSON.stringify(array_email))
+        load_data()
 
-            tb1.innerHTML = ''
-
-            load_data()
-            }
-
-        }
+      }
+    }
 
 
 
